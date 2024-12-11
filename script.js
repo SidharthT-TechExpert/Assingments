@@ -1,5 +1,6 @@
 // Accept input from the user
-let userInput = prompt("Enter a char input :");
+let num1 = Number(prompt("Enter a number:")); 
+let num2 = Number(prompt("Enter a float number:"));
 
-// Display the input on the console
-console.log("user entered: " + userInput);
+// Display Sum in Console 
+console.log("user entered: " +(num1+num2));
