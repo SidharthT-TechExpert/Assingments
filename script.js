@@ -1,6 +1,8 @@
 // Accept input from the user
-let num1 = Number(prompt("Enter a number:")); 
-let num2 = Number(prompt("Enter a float number:"));
+let P = Number(prompt("Enter Principal amount :")); 
+let R = Number(prompt("Enter a Interest rate (float):"));
+let n = Number(prompt("Enter a Number of years (float):"));
 
-// Display Sum in Console 
-console.log("user entered: " +(num1+num2));
+// Display Simple Interest (SI) in Console 
+console.log("Simple Interest (SI): " +((P*R*n)/100)
+);
