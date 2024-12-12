@@ -1,44 +1,31 @@
-// Array Size from User
+// get a Array size 
 
-let size = Number(prompt("Enter A Array Size:"));
+let size = Number(prompt("Enter a array Size:"));
+// geting array value 
+const array = getArrayInput();
 
-// Checking Size is Valid or not 
+console.log("Array is :"+array);
 
-if (isNaN(size) || size <= 0){
-    console.log("Invalid Array Size Entered!!");
-}else{
-    console.log("Enter Array 1 values:")
-     let array1 = getArrayInput( size );
-    
-    
-    console.log("Enter Array 2 Values:")
-      let array2 = getArrayInput(size);
-      
-      swapArray(array1,array2);
-      
-    // Desplay After Swapping  
-      console.log("Arrays after swapping:");
-      console.log("Array 1: "+array1);
-      console.log("Array 2: "+array2);
-}
-// get Array elements
-function getArrayInput(arraysize){
+// count of even numbers in array 
+console.log("Number of even numbers in the given array is "+nEven());
+
+// Array Values Geting 
+function getArrayInput(){
     let array = [];
     
-    for(i = 0 ;i < arraysize ;i++){
-      let value = Number(prompt(`Value ${i+1} :`));
-      array.push(value);
+    for(let i = 0 ;i < size ;i++){
+        let value = Number(prompt(`value ${i+1} : `));
+        array.push(value);
     }
-    return array;
+  return array;
 }
 
-// Swaping of Array
-function swapArray(arr1 , arr2){
-    let temp = 0 ; 
-    
+// Count of Even Number in Array
+function nEven(){
+  let count = 0 ;
     for(let i = 0 ;i < size ;i++){
-        temp = arr1[i];
-        arr1[i] = arr2[i];
-        arr2[i] = temp;
+        if(array[i] % 2 == 0)
+            count++;
     }
+     return count;
 }
