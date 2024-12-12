@@ -1,11 +1,19 @@
 // Accept input from the user
-let Num = Number(prompt("Enter a Multiplication Table Number:")); 
+let limit = Number(prompt("Enter a limit:")); 
 
-// Display Multiplecation Table 
-mTable();
+// Display Sum of odd Number b/w Limit
+console.log("Sum of odd numbers = "+oddSum());
 
-function mTable(){
-    for (let i = 1 ; i <=10 ; i ++){
-        console.log(i +" X "+Num+" = "+(i * Num) );
-    }
+function oddSum(){
+    let sum = 0;
+   for (let i = 1 ; i < limit ; i ++){
+       if (i % 2 == 1){
+           sum +=i;
+       }
+   }
+  if (sum == 0){
+      sum ="No Number In Odd Between this Limit";
+  }
+  
+  return sum ;
 }
