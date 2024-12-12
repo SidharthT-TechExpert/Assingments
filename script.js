@@ -1,38 +1,12 @@
-class Operation{
-  addition(){
-      let result = num1 + num2;
-     console.log('Result is : '+result);
- }
- substraction(){
-   let result = num1 - num2;   
-  console.log('Result is : '+result);
- }
-  multiplication(){
-      let result = num1 * num2;
-     console.log('Result is : '+result);
- }
- division(){
-      let result = num1 / num2;
-     console.log('Result is : '+result);
- }
-}
+//Getting Students Scores
+console.log("Enter the marks scored by the students,");
+let W = Number(prompt("Written test = "));
+let L = Number(prompt("Lab exam = "));
+let A = Number(prompt("Assingments = "));
 
-
-// Gatting a two numbers 
-let num1=Number(prompt("enter first number : "))
-let num2=Number(prompt("enter second number : "))
-
-let opr = new Operation();
-console.log("1 for addithion\n2 for substraction\n3 for multiplication\n4 fordivision");
-let choice =Number(prompt("Enter your choice : "));
-if(choice==1){
- opr.addition();
-}else if(choice==2){
- opr.substraction();
-}else if(choice==3){
- opr.multiplication()
-}else if(choice==4){
- opr.division();
-}else{
- consosle.log("wrong choice....!!!!!!!!")
-}
+// Overol Grade Calculating
+ let grade = ( (W * 70) / 100 ) + ( (L * 20) / 100 ) + ((A * 10) / 100);
+ 
+ //Display in Grede
+ 
+ console.log("Grade of the student is : "+grade);
