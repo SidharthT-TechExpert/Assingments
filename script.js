@@ -1,13 +1,13 @@
 // get a Array size 
-
 let size = Number(prompt("Enter a array Size:"));
+
 // geting array value 
 const array = getArrayInput();
 
 console.log("Array is :"+array);
 
-// count of even numbers in array 
-console.log("Number of even numbers in the given array is "+nEven());
+//Sorting Of Array Desending Odear
+console.log("After Sorting Of Array Is: "+desSort());
 
 // Array Values Geting 
 function getArrayInput(){
@@ -19,13 +19,17 @@ function getArrayInput(){
     }
   return array;
 }
-
-// Count of Even Number in Array
-function nEven(){
-  let count = 0 ;
-    for(let i = 0 ;i < size ;i++){
-        if(array[i] % 2 == 0)
-            count++;
+// Sorting Of Array Desending Odear
+function desSort(){
+    let temp=0;
+    for(let i = 0;i < size ;i++){
+        for(let j = i+1 ;j < size;j++){
+            if(array[i] < array[j]){
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
     }
-     return count;
+  return array;
 }
