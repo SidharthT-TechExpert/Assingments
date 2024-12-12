@@ -1,18 +1,25 @@
-// String Getting User
-let string = String(prompt("Enter A String: "));
-//Display Palindrome Or Not
-console.log(paliOrNot());
-
-// Function Checking whether a string is a palindrome or not
-function paliOrNot(){
-    size = string.length;
-    for(let i = 0;i < string.length;i++){
-        if((string[i])!=(string[size-i-1])){
-            result = "Entered string is not a palindrome";
-            break;
-        }else{
-            result = "Entered string is a palindrome";
-        }
-    }
-  return result;
+function main(){
+    // Declare a Array
+     let array = [];
+   //Array Values Getting
+     array = getArray(array);
+   //Displaying Array
+     displayArray(array);
 }
+
+// function Array Values Getting 
+function getArray(array){
+    let size = Number(prompt("Enter a array size: "))
+    for(let i = 0;i < size ;i++){
+        let value = Number(prompt(`Value ${i+1}: `))
+        array.push(value);
+    }
+  return array;
+}
+
+// Function Display Array Values
+function displayArray(array){
+    console.log("Entered Array Values is: "+array);
+}
+
+main();
