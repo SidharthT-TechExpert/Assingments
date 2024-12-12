@@ -1,25 +1,20 @@
-function main(){
-    // Declare a Array
-     let array = [];
-   //Array Values Getting
-     array = getArray(array);
-   //Displaying Array
-     displayArray(array);
-}
+//Getting Value
+let num = Number(prompt("Enter a Number:"));
+//clecking entered value is prime or not
+let result = primeOrNot();
+//Printing OutPuts
+console.log(result);
 
-// function Array Values Getting 
-function getArray(array){
-    let size = Number(prompt("Enter a array size: "))
-    for(let i = 0;i < size ;i++){
-        let value = Number(prompt(`Value ${i+1}: `))
-        array.push(value);
-    }
-  return array;
-}
+// Function Of Prime or Not
+function primeOrNot(){
+     if(num < 2){
+          return "Enterd Number is not a prime number";
+        }
+    for(i = 2;i <= num/2;i++){
+         if(num % i == 0){
+           return "Enterd Number is not a prime number";
+          }
+      }
 
-// Function Display Array Values
-function displayArray(array){
-    console.log("Entered Array Values is: "+array);
+  return "Enterd Number is a prime number";
 }
-
-main();
