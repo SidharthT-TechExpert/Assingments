@@ -1,48 +1,38 @@
-//Getting size of Array
-let size = Number(prompt("Enter a arry size:"));
-
-//Getting Array1 Value 
-console.log('Enter the '+(size*size)+' values to array 1')
- let array1 = getArray();
- 
-//Getting Array2 Value  
-console.log('Enter the '+(size*size)+' values to array 2')
- let array2 = getArray();
-
-//Adding Two Array
-let array = addingArrays();
-
-//Printing Result
-console.log('The sum of two given arrays : ')
- DisplayArray()
-
-// Fun Getting Array Values
-function getArray(){
-    let array=[];
-     for(let i = 0 ; i < size ; i++){
-        array[i]=[];
-     for(let j = 0 ; j < size ; j++){
-         array[i][j] = Number(prompt())
-     }
-  }
-  return array;
+class Operation{
+  addition(){
+      let result = num1 + num2;
+     console.log('Result is : '+result);
+ }
+ substraction(){
+   let result = num1 - num2;   
+  console.log('Result is : '+result);
+ }
+  multiplication(){
+      let result = num1 * num2;
+     console.log('Result is : '+result);
+ }
+ division(){
+      let result = num1 / num2;
+     console.log('Result is : '+result);
+ }
 }
 
-// Fun Adding Array Values
-function addingArrays(){
-    let arraySum = [];
-    for(let i = 0 ; i < size ; i++){
-        arraySum[i] = [];
-    for(let j = 0 ; j < size ; j++){
-        arraySum[i][j] = array1[i][j] + array2[i][j]
-    }
-  }
-  return arraySum;
-}
 
-//Printing Array 
-function DisplayArray(){
-  for(let i= 0 ; i < size ; i++){
-      console.log(array[i]+" ");
-  }
+// Gatting a two numbers 
+let num1=Number(prompt("enter first number : "))
+let num2=Number(prompt("enter second number : "))
+
+let opr = new Operation();
+console.log("1 for addithion\n2 for substraction\n3 for multiplication\n4 fordivision");
+let choice =Number(prompt("Enter your choice : "));
+if(choice==1){
+ opr.addition();
+}else if(choice==2){
+ opr.substraction();
+}else if(choice==3){
+ opr.multiplication()
+}else if(choice==4){
+ opr.division();
+}else{
+ consosle.log("wrong choice....!!!!!!!!")
 }
