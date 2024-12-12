@@ -1,23 +1,34 @@
 // Accept input from the user
-let totalMark = Number(prompt("Enter Your Total Mark Percentage Out Of 100 (Float):")); 
-// Display Pass or Failed 
-console.log(Grade());
+let Num = Number(prompt("Enter a Number ( 1 to 7):")); 
 
-function Grade(){
-    if(totalMark > 100){
-        result = "Total Mark Percentage Out Of 100!!!\nEnter A Valid Total mark Pesentage";
-    }else if(totalMark > 90){
-        result = "Congratulation ,\n Your Grade Is 'A'";
-    }else if(totalMark > 80){
-        result = "Congratulation ,\n Your Grade Is 'B'";
-    }else if(totalMark > 70){
-        result = "Your Grade Is 'C'";
-    }else if(totalMark > 60){
-        result = "Your Grade Is 'D'";
-    }else if (totalMark > 50){
-        result = "Your Grade Is 'E'";
-    }else{
-        result="Sorry, Your Failed !!!";
+// Display Carespond Day
+console.log(Day());
+
+function Day(){
+    switch(Num){
+        case 1 :
+             result = "Sunday";
+             break;
+        case 2 :
+             result = "Monday";
+             break;
+        case 3 :
+             result = "Tuesday";
+             break;
+        case 4 :
+            result = "Wednesday";
+            break;
+        case 5 :
+             result = "Thursday";
+             break;
+        case 6 :
+             result = "Friday";
+             break;
+        case 7 :
+             result = "Saturday";
+             break;
+        default :
+             result = "Invalid Entry !!!"
     }
   return result;
 }
