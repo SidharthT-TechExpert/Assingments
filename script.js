@@ -1,12 +1,20 @@
-//Getting Students Scores
-console.log("Enter the marks scored by the students,");
-let W = Number(prompt("Written test = "));
-let L = Number(prompt("Lab exam = "));
-let A = Number(prompt("Assingments = "));
+//Getting Anual income
+let Income = Number(prompt("Enter Your Anual Income : "));
 
-// Overol Grade Calculating
- let grade = ( (W * 70) / 100 ) + ( (L * 20) / 100 ) + ((A * 10) / 100);
+//Calling Tax 
+console.log("Income Tax Amount Is : "+tax());
  
- //Display in Grede
  
- console.log("Grade of the student is : "+grade);
+ //Fun Tax 
+ function tax(){
+     let L = 100000;
+     if (Income > 10 * L){
+         return (Income * 30) / 100;
+     }else if(Income > 5 * L){
+         return (Income * 20) / 100;
+     }else if(Income > 2.5 * L){
+         return (Income * 5) / 100;
+     }else{
+         return "No Tax"
+     }
+ }
