@@ -1,36 +1,66 @@
-function main() {
-    // Declare Arrays
-    let array = [];
-    // Array Size    
-    let size = Number(prompt("Enter a array size: "));
-    
-    // Array Values Getting
-    console.log("Enter array values:");
-      array = getArray(size); // Get first array
-    // Displaying Array
-    displayArray(array);
+ // Method to calculate the area of a circle
+ class Area {
+    circle(radius) {
+        let area = Math.PI * radius * radius;
+        console.log("Area of the circle is: " + area);
+    }
+ // Method to calculate the area of a square    
+   square(side) {
+        let area = side * side;
+        console.log("Area of the square is: " + area);
+    }
+  
+ // Method to calculate the area of a rectangle
+    rectangle(length, width) {
+        let area = length * width;
+        console.log("Area of the rectangle is: " + area);
+    }
+// Method to calculate the area of a triangle
+    triangle(base, height) {
+        let area = 0.5 * base * height;
+        console.log("Area of the triangle is: " + area);
+    }
 }
 
-// Function to get Array Values
-function getArray(size) {
-    let array = [];
-    let k = 1;
-    for (let i = 0; i < size; i++) {
-        array[i] = [];
-        for (let j = 0; j < size; j++) {
-            let value = Number(prompt(`Enter value for position [${i + 1},${j + 1}]: `));
-            array[i][j] = value; // Corrected this line to assign the value to the correct position
+class MyClass extends Area {
+    static main(args) {
+        let myClass = new MyClass();
+        
+        console.log("\n1. Circle\n2. Square\n3. Rectangle\n4. Triangle");
+        let choice = Number(prompt("Enter your choice:"));
+        
+        switch (choice) {
+            case 1:
+                // Circle
+                let radius = Number(prompt("Enter Your Circle Radius: "));
+                myClass.circle(radius);
+                break;
+            case 2:
+                //Square
+                let side = Number(prompt("Enter the side length of the square: "));
+                myClass.square(side);
+                break;
+                
+            case 3:
+                 // Rectangle
+                let length = parseFloat(prompt("Enter the length of the rectangle: "));
+                let width = parseFloat(prompt("Enter the width of the rectangle: "));
+                myClass.rectangle(length, width);
+                break;
+                
+            case 4:
+                // Triangle
+              let base = parseFloat(prompt("Enter the base of the triangle: "));
+              let height = parseFloat(prompt("Enter the height of the triangle: "));
+               myClass.triangle(base, height);
+               break;
+               
+            default:
+                console.log("Invalid choice!");
+                break;
         }
     }
-    return array;
 }
 
-// Function to Display Array Values
-function displayArray(array) {
-    console.log("Entered Array Values are:");
-    for (let i = 0; i < array.length; i++) {
-        console.log(array[i].join(" ")); // Print each row of the array
-    }
-}
-
-main();
+// Calling the main method to start the program
+MyClass.main();
