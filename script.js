@@ -1,29 +1,56 @@
-// getting size of array
-let size = Number(prompt("Enter a array limit: "));
-
-console.log(`Enter array ${size} values : `);
-// Getting Array Values in array
-let array = getArray();
-
-// Array Values Printing
-let array2 = mult();
-console.log("Output is: "+array2);
-//Fun getting array values
-function getArray(){
+function main() {
+    // Declare Arrays
     let array = [];
-     for(let i = 0; i < size ; i++){
-        let value = Number(prompt(`value ${i+1}: `));
-        array.push(value);
-     }
-  return array;
+    let array2 = [];
+    
+    // Array Size    
+    let size = Number(prompt("Enter a array size: "));
+    
+    // Array Values Getting
+    console.log("Enter array 1 values:");
+      array = getArray(size); // Get first array
+    console.log("Enter array 2 values:");
+      array2 = getArray(size); // Get second array
+     
+    // Sum of two arrays
+    let arrayA = sumArray(array, array2, size);
+    
+    // Displaying Array
+    displayArray(arrayA);
 }
 
-//Fun Mulit of adj value
-function mult(){
-    let marray = [];
-    for(let i = 0;i < size;i++){
-        if(i == size-1)break;
-       marray[i] = array[i] * array[i+1];
+// Function to get Array Values
+function getArray(size) {
+    let array = [];
+    let k = 1;
+    for (let i = 0; i < size; i++) {
+        array[i] = [];
+        for (let j = 0; j < size; j++) {
+            let value = Number(prompt(`Enter value for position [${i + 1},${j + 1}]: `));
+            array[i][j] = value; // Corrected this line to assign the value to the correct position
+        }
     }
-  return marray;
+    return array;
 }
+
+// Function to Display Array Values
+function displayArray(array) {
+    console.log("Entered Array Values are:");
+    for (let i = 0; i < array.length; i++) {
+        console.log(array[i].join(" ")); // Print each row of the array
+    }
+}
+
+// Function to Sum Arrays
+function sumArray(array1, array2, size) {
+    let array = [];
+    for (let i = 0; i < size; i++) {
+        array[i] = [];
+        for (let j = 0; j < size; j++) {
+            array[i][j] = array1[i][j] + array2[i][j]; // Summing corresponding elements
+        }
+    }
+    return array;
+}
+
+main();
